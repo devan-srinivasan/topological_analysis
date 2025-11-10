@@ -1,7 +1,8 @@
-import json, openai, dotenv, os, tqdm, datetime
+import json, openai, dotenv, os, tqdm, datetime, torch
+from transformers import BertTokenizer, BertModel
 
 ROOT_DIR = '/Users/mrmackamoo/Projects/topological_analysis/'
-DATA_DIR = os.path.join(ROOT_DIR, 'data')
+DATA_DIR = os.path.join(ROOT_DIR, 'manifold_evolution/data')
 assert dotenv.load_dotenv(os.path.join(ROOT_DIR, '.env')), "Failed to load .env file"
 
 client = openai.OpenAI(
@@ -11,6 +12,7 @@ client = openai.OpenAI(
 )
 
 with open(f'{DATA_DIR}/initial_summaries.json', 'r') as f:
+    
     summaries = json.load(f)
 
 min_word_len = 100
@@ -86,3 +88,38 @@ def build_dataset(
     
     return paraphrased_summaries
 
+def vectorize_dataset(
+    summaries: dict[str, str],
+    output_dir: str = '/Users/mrmackamoo/Projects/topological_analysis/manifold_evolution/data/embeddings/initial',
+):
+    """
+    We vectorize the dataset by passing it through BERT and extracting the hidden states.
+    Arguments:
+    - summaries: dictionary of {title: summary} pairs
+    - output_dir: directory to save the embeddings and summaries
+    
+    We process each summary for each title:summary pair in the dataset. Then we pass it through BERT setting
+    output_hidden_states=True. We extract the hidden states from the output, from each layer, and save the tensor 
+    to embeddings/{title}.pt in output_dir.
+
+    For each summary, we save the embeddings as a tensor of shape (L, d) where L is the number of layers and d is the hidden state dimension.
+    We will also save the summaries as a dictionary in summaries.json for reference, within this directory.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    embeddings_dir = os.path.join(output_dir, 'embeddings')
+    os.makedirs(embeddings_dir, exist_ok=True)
+
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertModel.from_pretrained('bert-base-uncased', output_hidden_states=True)
+
+    for title, summary in tqdm.tqdm(summaries.items(), desc="Vectorizing summaries"):
+        inputs = tokenizer(summary, return_tensors='pt', truncation=True, max_length=512)
+        outputs = model(**inputs)
+        hidden_states = torch.stack(outputs.hidden_states, dim=0).squeeze(1)  # Shape: (L, T, d)
+        torch.save(hidden_states, os.path.join(embeddings_dir, f'{title}.pt'))
+
+    with open(os.path.join(output_dir, 'summaries.json'), 'w') as f:
+        json.dump(summaries, f, indent=4)
+
+
+vectorize_dataset(filtered_summaries)
