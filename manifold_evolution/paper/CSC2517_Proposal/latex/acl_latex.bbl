@@ -1,0 +1,149 @@
+\begin{thebibliography}{29}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Agarwal et~al.(2024)Agarwal, Singh, Zhang, Bohnet, Rosias, Chan, Zhang, Anand, Abbas, Nova, Co-Reyes, Chu, Behbahani, Faust, and Larochelle}]{agarwal2024manyshotincontextlearning}
+Rishabh Agarwal, Avi Singh, Lei~M. Zhang, Bernd Bohnet, Luis Rosias, Stephanie Chan, Biao Zhang, Ankesh Anand, Zaheer Abbas, Azade Nova, John~D. Co-Reyes, Eric Chu, Feryal Behbahani, Aleksandra Faust, and Hugo Larochelle. 2024.
+\newblock \href {https://arxiv.org/abs/2404.11018} {Many-shot in-context learning}.
+\newblock \emph{Preprint}, arXiv:2404.11018.
+
+\bibitem[{Balderas et~al.(2025)Balderas, Lastra, and Benítez}]{balderas_persistenthomologybert}
+Luis Balderas, Miguel Lastra, and José~M. Benítez. 2025.
+\newblock \href {https://doi.org/10.3390/app15010390} {A green ai methodology based on persistent homology for compressing bert}.
+\newblock \emph{Applied Sciences}, 15(1):390.
+
+\bibitem[{Benfenati et~al.(2025)Benfenati, Ferrara, Marta, Riva, and Rocchetti}]{benfenati2025unveilingtransformerperceptionexploring}
+Alessandro Benfenati, Alfio Ferrara, Alessio Marta, Davide Riva, and Elisabetta Rocchetti. 2025.
+\newblock \href {https://arxiv.org/abs/2410.06019} {Unveiling transformer perception by exploring input manifolds}.
+\newblock \emph{Preprint}, arXiv:2410.06019.
+
+\bibitem[{Bianchini and Scarselli(2014)}]{complexityofneuralnetworkclassifiers}
+Monica Bianchini and Franco Scarselli. 2014.
+\newblock \href {https://doi.org/10.1109/TNNLS.2013.2293637} {On the complexity of neural network classifiers: A comparison between shallow and deep architectures}.
+\newblock \emph{IEEE Transactions on Neural Networks and Learning Systems}, 25(8):1553--1565.
+
+\bibitem[{Chen et~al.(2025{\natexlab{a}})Chen, Zhu, Li, Yu, Zhang, and Wang}]{chen2025preservesculptmanifoldalignedfinetuning}
+Dexia Chen, Qianjie Zhu, Weibing Li, Yue Yu, Tong Zhang, and Ruixuan Wang. 2025{\natexlab{a}}.
+\newblock \href {https://arxiv.org/abs/2508.12877} {Preserve and sculpt: Manifold-aligned fine-tuning of vision-language models for few-shot learning}.
+\newblock \emph{Preprint}, arXiv:2508.12877.
+
+\bibitem[{Chen et~al.(2025{\natexlab{b}})Chen, Gu, Huang, Huang, Jiang, Jie, Jin, Jin, Li, Ma, Ren, Shen, Shi, Sun, Sun, Wang, Wang, Wang, Wei, Wei, Wu, Wu, Xia, Xin, Yang, Ying, Yuan, Yuan, Zhan, Zhang, Zhang, Zhang, Zhao, Zhao, Zhou, and Zhu}]{chen2025seedproverdeepbroadreasoning}
+Luoxin Chen, Jinming Gu, Liankai Huang, Wenhao Huang, Zhicheng Jiang, Allan Jie, Xiaoran Jin, Xing Jin, Chenggang Li, Kaijing Ma, Cheng Ren, Jiawei Shen, Wenlei Shi, Tong Sun, He~Sun, Jiahui Wang, Siran Wang, Zhihong Wang, Chenrui Wei, and 17 others. 2025{\natexlab{b}}.
+\newblock \href {https://arxiv.org/abs/2507.23726} {Seed-prover: Deep and broad reasoning for automated theorem proving}.
+\newblock \emph{Preprint}, arXiv:2507.23726.
+
+\bibitem[{DeepSeek-AI et~al.(2025)DeepSeek-AI, Guo, Yang, Zhang, Song, Zhang, Xu, Zhu, Ma, Wang, Bi, Zhang, Yu, Wu, Wu, Gou, Shao, Li, Gao, Liu, Xue, Wang, Wu, Feng, Lu, Zhao, Deng, Zhang, Ruan, Dai, Chen, Ji, Li, Lin, Dai, Luo, Hao, Chen, Li, Zhang, Bao, Xu, Wang, Ding, Xin, Gao, Qu, Li, Guo, Li, Wang, Chen, Yuan, Qiu, Li, Cai, Ni, Liang, Chen, Dong, Hu, Gao, Guan, Huang, Yu, Wang, Zhang, Zhao, Wang, Zhang, Xu, Xia, Zhang, Zhang, Tang, Li, Wang, Li, Tian, Huang, Zhang, Wang, Chen, Du, Ge, Zhang, Pan, Wang, Chen, Jin, Chen, Lu, Zhou, Chen, Ye, Wang, Yu, Zhou, Pan, Li, Zhou, Wu, Ye, Yun, Pei, Sun, Wang, Zeng, Zhao, Liu, Liang, Gao, Yu, Zhang, Xiao, An, Liu, Wang, Chen, Nie, Cheng, Liu, Xie, Liu, Yang, Li, Su, Lin, Li, Jin, Shen, Chen, Sun, Wang, Song, Zhou, Wang, Shan, Li, Wang, Wei, Zhang, Xu, Li, Zhao, Sun, Wang, Yu, Zhang, Shi, Xiong, He, Piao, Wang, Tan, Ma, Liu, Guo, Ou, Wang, Gong, Zou, He, Xiong, Luo, You, Liu, Zhou, Zhu, Xu, Huang, Li, Zheng, Zhu, Ma, Tang, Zha, Yan, Ren, Ren, Sha, Fu, Xu, Xie, Zhang, Hao, Ma, Yan, Wu, Gu, Zhu, Liu, Li, Xie, Song, Pan, Huang, Xu, Zhang, and Zhang}]{deepseekai2025deepseekr1incentivizingreasoningcapability}
+DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu~Wu, Z.~F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, and 181 others. 2025.
+\newblock \href {https://arxiv.org/abs/2501.12948} {Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning}.
+\newblock \emph{Preprint}, arXiv:2501.12948.
+
+\bibitem[{Devlin et~al.(2019)Devlin, Chang, Lee, and Toutanova}]{devlin2019bertpretrainingdeepbidirectional}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+\newblock \href {https://arxiv.org/abs/1810.04805} {Bert: Pre-training of deep bidirectional transformers for language understanding}.
+\newblock \emph{Preprint}, arXiv:1810.04805.
+
+\bibitem[{Elhage et~al.(2022)Elhage, Hume, Olsson, Schiefer, Henighan, Kravec, Hatfield-Dodds, Lasenby, Drain, Chen, Grosse, McCandlish, Kaplan, Amodei, Wattenberg, and Olah}]{elhage2022toymodelssuperposition}
+Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Robert Lasenby, Dawn Drain, Carol Chen, Roger Grosse, Sam McCandlish, Jared Kaplan, Dario Amodei, Martin Wattenberg, and Christopher Olah. 2022.
+\newblock \href {https://arxiv.org/abs/2209.10652} {Toy models of superposition}.
+\newblock \emph{Preprint}, arXiv:2209.10652.
+
+\bibitem[{Elhage et~al.(2021)Elhage, Nanda, Olsson, Henighan, Joseph, Mann, Askell, Bai, Chen, Conerly, DasSarma, Drain, Ganguli, Hatfield-Dodds, Hernandez, Jones, Kernion, Lovitt, Ndousse, Amodei, Brown, Clark, Kaplan, McCandlish, and Olah}]{elhage2021mathematical}
+Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Nova DasSarma, Dawn Drain, Deep Ganguli, Zac Hatfield-Dodds, Danny Hernandez, Andy Jones, Jackson Kernion, Liane Lovitt, Kamal Ndousse, and 6 others. 2021.
+\newblock A mathematical framework for transformer circuits.
+\newblock \emph{Transformer Circuits Thread}.
+\newblock Https://transformer-circuits.pub/2021/framework/index.html.
+
+\bibitem[{Fitz et~al.(2024)Fitz, Romero, and Schneider}]{fitz2024hiddenholestopologicalaspects}
+Stephen Fitz, Peter Romero, and Jiyan~Jonas Schneider. 2024.
+\newblock \href {https://arxiv.org/abs/2406.05798} {Hidden holes: topological aspects of language models}.
+\newblock \emph{Preprint}, arXiv:2406.05798.
+
+\bibitem[{Gardinazzi et~al.(2025)Gardinazzi, Viswanathan, Panerai, Ansuini, Cazzaniga, and Biagetti}]{gardinazzi2025persistenttopologicalfeatureslarge}
+Yuri Gardinazzi, Karthik Viswanathan, Giada Panerai, Alessio Ansuini, Alberto Cazzaniga, and Matteo Biagetti. 2025.
+\newblock \href {https://arxiv.org/abs/2410.11042} {Persistent topological features in large language models}.
+\newblock \emph{Preprint}, arXiv:2410.11042.
+
+\bibitem[{G{\'o}mez-Rodr{\'i}guez and Williams(2023)}]{gomez-rodriguez-williams-2023-confederacy}
+Carlos G{\'o}mez-Rodr{\'i}guez and Paul Williams. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.findings-emnlp.966} {A confederacy of models: a comprehensive evaluation of {LLM}s on creative writing}.
+\newblock In \emph{Findings of the Association for Computational Linguistics: EMNLP 2023}, pages 14504--14528, Singapore. Association for Computational Linguistics.
+
+\bibitem[{Guss and Salakhutdinov(2018)}]{guss2018characterizingcapacityneuralnetworks}
+William~H. Guss and Ruslan Salakhutdinov. 2018.
+\newblock \href {https://arxiv.org/abs/1802.04443} {On characterizing the capacity of neural networks using algebraic topology}.
+\newblock \emph{Preprint}, arXiv:1802.04443.
+
+\bibitem[{Hausmann(1995)}]{Hausmann1995}
+Jean-Claude Hausmann. 1995.
+\newblock On the vietoris-rips complexes and a cohomology theory for metric spaces.
+\newblock In F.~Quinn, editor, \emph{Prospects in Topology: Proceedings of a Conference in Honor of William Browder (Annals of Mathematics Studies, Vol. 138)}, pages 175--188. Princeton University Press, Princeton, NJ, USA.
+
+\bibitem[{Kamalloo et~al.(2023)Kamalloo, Dziri, Clarke, and Rafiei}]{kamalloo2023evaluatingopendomainquestionanswering}
+Ehsan Kamalloo, Nouha Dziri, Charles L.~A. Clarke, and Davood Rafiei. 2023.
+\newblock \href {https://arxiv.org/abs/2305.06984} {Evaluating open-domain question answering in the era of large language models}.
+\newblock \emph{Preprint}, arXiv:2305.06984.
+
+\bibitem[{Mamou et~al.(2020)Mamou, Le, Rio, Stephenson, Tang, Kim, and Chung}]{mamou2020emergenceseparablemanifoldsdeep}
+Jonathan Mamou, Hang Le, Miguel~Del Rio, Cory Stephenson, Hanlin Tang, Yoon Kim, and SueYeon Chung. 2020.
+\newblock \href {https://arxiv.org/abs/2006.01095} {Emergence of separable manifolds in deep language representations}.
+\newblock \emph{Preprint}, arXiv:2006.01095.
+
+\bibitem[{McInnes et~al.(2020)McInnes, Healy, and Melville}]{mcinnes2020umapuniformmanifoldapproximation}
+Leland McInnes, John Healy, and James Melville. 2020.
+\newblock \href {https://arxiv.org/abs/1802.03426} {Umap: Uniform manifold approximation and projection for dimension reduction}.
+\newblock \emph{Preprint}, arXiv:1802.03426.
+
+\bibitem[{Mikolov et~al.(2013)Mikolov, Sutskever, Chen, Corrado, and Dean}]{word2vec}
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg~S Corrado, and Jeff Dean. 2013.
+\newblock \href {https://proceedings.neurips.cc/paper_files/paper/2013/file/9aa42b31882ec039965f3c4923ce901b-Paper.pdf} {Distributed representations of words and phrases and their compositionality}.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~26. Curran Associates, Inc.
+
+\bibitem[{Modell et~al.(2025)Modell, Rubin-Delanchy, and Whiteley}]{modell2025originsrepresentationmanifoldslarge}
+Alexander Modell, Patrick Rubin-Delanchy, and Nick Whiteley. 2025.
+\newblock \href {https://arxiv.org/abs/2505.18235} {The origins of representation manifolds in large language models}.
+\newblock \emph{Preprint}, arXiv:2505.18235.
+
+\bibitem[{Park et~al.(2024)Park, Choe, and Veitch}]{park2024linearrepresentationhypothesisgeometry}
+Kiho Park, Yo~Joong Choe, and Victor Veitch. 2024.
+\newblock \href {https://arxiv.org/abs/2311.03658} {The linear representation hypothesis and the geometry of large language models}.
+\newblock \emph{Preprint}, arXiv:2311.03658.
+
+\bibitem[{{Rieck, Bastian Alexander} et~al.(2023){Rieck, Bastian Alexander}, {Togninalli, Matteo}, {Bock, Christian}, {Moor, Michael}, {Horn, Max}, {Gumbsch, Thomas}, and {Borgwardt, Karsten}}]{neuralpersistence}
+{Rieck, Bastian Alexander}, {Togninalli, Matteo}, {Bock, Christian}, {Moor, Michael}, {Horn, Max}, {Gumbsch, Thomas}, and {Borgwardt, Karsten}. 2023.
+\newblock \href {https://doi.org/10.3929/ETHZ-B-000327207} {Neural persistence: A complexity measure for deep neural networks using algebraic topology}.
+
+\bibitem[{Tiblias et~al.(2025)Tiblias, Bigoulaeva, Niu, Balloccu, and Gurevych}]{tiblias2025shapehappensautomaticfeature}
+Federico Tiblias, Irina Bigoulaeva, Jingcheng Niu, Simone Balloccu, and Iryna Gurevych. 2025.
+\newblock \href {https://arxiv.org/abs/2510.01025} {Shape happens: Automatic feature manifold discovery in llms via supervised multi-dimensional scaling}.
+\newblock \emph{Preprint}, arXiv:2510.01025.
+
+\bibitem[{Valeriani et~al.(2023)Valeriani, Doimo, Cuturello, Laio, Ansuini, and Cazzaniga}]{valeriani2023geometryhiddenrepresentationslarge}
+Lucrezia Valeriani, Diego Doimo, Francesca Cuturello, Alessandro Laio, Alessio Ansuini, and Alberto Cazzaniga. 2023.
+\newblock \href {https://arxiv.org/abs/2302.00294} {The geometry of hidden representations of large transformer models}.
+\newblock \emph{Preprint}, arXiv:2302.00294.
+
+\bibitem[{Vaswani et~al.(2023)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin}]{vaswani2023attentionneed}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2023.
+\newblock \href {https://arxiv.org/abs/1706.03762} {Attention is all you need}.
+\newblock \emph{Preprint}, arXiv:1706.03762.
+
+\bibitem[{Vietoris(1927)}]{Vietoris1927}
+Leopold Vietoris. 1927.
+\newblock \href {https://doi.org/10.1007/BF01447877} {Über den höheren zusammenhang kompakter räume und eine klasse von zusammenhangstreuen abbildungen}.
+\newblock \emph{Mathematische Annalen}, 97(1):454--472.
+
+\bibitem[{Zhang and Dong(2025)}]{zhang2025multiscalemanifoldalignmentinterpreting}
+Yukun Zhang and Qi~Dong. 2025.
+\newblock \href {https://arxiv.org/abs/2505.20333} {Multi-scale manifold alignment for interpreting large language models: A unified information-geometric framework}.
+\newblock \emph{Preprint}, arXiv:2505.20333.
+
+\bibitem[{Zhou et~al.(2023)Zhou, Schärli, Hou, Wei, Scales, Wang, Schuurmans, Cui, Bousquet, Le, and Chi}]{zhou2023leasttomostpromptingenablescomplex}
+Denny Zhou, Nathanael Schärli, Le~Hou, Jason Wei, Nathan Scales, Xuezhi Wang, Dale Schuurmans, Claire Cui, Olivier Bousquet, Quoc Le, and Ed~Chi. 2023.
+\newblock \href {https://arxiv.org/abs/2205.10625} {Least-to-most prompting enables complex reasoning in large language models}.
+\newblock \emph{Preprint}, arXiv:2205.10625.
+
+\bibitem[{Świder(2024)}]{swider2024characterizationtopologicalstructuresdifferent}
+Paweł Świder. 2024.
+\newblock \href {https://arxiv.org/abs/2407.06286} {Characterization of topological structures in different neural network architectures}.
+\newblock \emph{Preprint}, arXiv:2407.06286.
+
+\end{thebibliography}

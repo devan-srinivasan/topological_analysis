@@ -1,0 +1,244 @@
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[preprint]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{CSC2517 Proposal: Topological Analysis of Hidden Structures in BERT}
+
+
+\author{Devan Srinivasan \\
+  University of Toronto \\
+  \texttt{devan@cs.toronto.edu}
+}
+
+
+\begin{document}
+\maketitle
+% \begin{abstract}
+% ...
+% \end{abstract}
+
+\section{Introduction}
+It is well understood that Large Language Models (LLMs) compete with (and sometimes exceed) humans in various tasks such
+as mathematics \citet{deepseekai2025deepseekr1incentivizingreasoningcapability, chen2025seedproverdeepbroadreasoning} \footnote{See https://epoch.ai/frontiermath for latest results}, 
+question answering \cite{kamalloo2023evaluatingopendomainquestionanswering}, 
+and writing \cite{gomez-rodriguez-williams-2023-confederacy}, all which
+require a sufficient understanding of human knowledge and language. While it seems LLMs 
+have effectively modelled this, little is known about their internal mechanisms in latent space.
+There are many ways to analyze these latent representations, but one interesting approach comes from the vantage point
+of topology. Prior work has proposed that latent state representations in DNNs form manifolds \cite{fitz2024hiddenholestopologicalaspects,benfenati2025unveilingtransformerperceptionexploring}, 
+on which we can utilize tools from topology to study.
+
+Seldom work has been done to justify the existince of such a manifold, and these ideas have yet to be reconciled with emerging results from mechanistic interpretability describing this space with the linear representation hypothesis (LRH) \cite{park2024linearrepresentationhypothesisgeometry}. LRH posits that learned features are stored as directions, pairwise nearly orthogonal,
+in high dimensional latent space, utilizing high sparsity in co-occurence to do so reliably. This phenomena of storing more
+vectors than the rank of the vector space is called superposition. Under this principle in the context of LLM's, as each token is processed in parallel, 
+the latent representation of each token is called it's residual stream, a sum of numerous features in superposition. From this viewpoint it can be shown mathematically that
+the transformer reads and writes information between token streams \cite{elhage2021mathematical}.
+
+Now given this hypothesis, we can create a new interpretation on the efficacy of prompting strategies like LeastToMost \cite{zhou2023leasttomostpromptingenablescomplex} and many shot in-context learning \cite{agarwal2024manyshotincontextlearning}. Since LLMs
+are, by design, constrained to work with the content present in each token's stream, when different tokens are present in the prompt, it
+is possible that these tokens contain new features in their streams (held in superposition) that the transformer now has access to compute
+with, yielding a different (hopefully better) answer. Colloquially this phenomena has been described differently as "jumping manifolds" where
+LLMs gain access to new manifolds previously unavailable. This suggests the structure of the residual manifold should change, and
+such a geometric change is a perfect problem to apply topological data analysis (TDA) to, which is what we intend to do.
+
+Reconciling these three ideas - residual manifolds in transformers, LRH, and TDA is what this proposal aims to 
+accomplish. Explicitly it strives to make the following inquisitions\footnote{Note we use "manifold" here where we have not yet justified 
+such a mathematic object exists. We are following prior use of the term \cite{fitz2024hiddenholestopologicalaspects}}:
+
+\begin{enumerate}
+  \item Mathematically investigate residual "manifolds" and their structure 
+  \item Formalize theoretical ideas behind "jumping manifolds" under the linear representation hypothesis
+  \item Conduct experiments studying residual manifold topology under linguistic perturbation supporting the above theory
+\end{enumerate}
+
+The details of the intended approach and experiments can be found in \autoref{sec:plan}.
+
+\section{Related Work}
+% \subsection{Topological Data Analysis in Machine Learning}
+
+\textbf{TDA and Machine Learning}
+
+While there has been plenty of work conducting topological data analysis in machine learning, we present a subset most relevant to this work and it's related topics. 
+One avenue of applying tools from topology to machine learning problems has demonstrated the relationship bewtween the complexity of the problem and/or model, and it's topological features.
+\citet{complexityofneuralnetworkclassifiers} studied how the topological complexity of a neural network's input class regions reflects
+it's architecture and expressivity, relating theoretical results to the expressivity of deep versus wide neural networks. Similarly, \citet{guss2018characterizingcapacityneuralnetworks} analyzed the topological complexity of decision boundaries 
+in the data and related it to the capacity of the network to learn the function, by empirically characterizing it's topological capacity.
+\citet{neuralpersistence} even developed a topology-based complexity measure for neural networks by applying persistent homology to the weights, and aggregating across the
+entire network.
+
+\textbf{TDA and Hidden Representations}
+
+Furthermore, there has been work even conducting topological data analysis on latent state representations, akin to what we seek to do.
+\citet{swider2024characterizationtopologicalstructuresdifferent} does persistent homology with Vietoris-Rips complexes built from latent 
+representation point clouds on vision datasets (with vision models). \citet{valeriani2023geometryhiddenrepresentationslarge} analyze the geometry of hidden representations of 
+large transformer models (not necessarily LLMs) finding correlations between topological features and semantic content in the network.
+\citet{balderas_persistenthomologybert} use persistent homology on neurons in BERT to define a pruning criterion acheiving strong results.
+\citet{gardinazzi2025persistenttopologicalfeatureslarge} even use persistent homology across entire language models, finding results supportive of previous results
+in mechanistic interpretability.
+
+
+\textbf{Manifolds and LLMs}
+
+There is also a body of more work pertaining specifically to manifolds and LLMs.
+\citet{mamou2020emergenceseparablemanifoldsdeep} conduct manifold analysis with word representation models (like BERT) finding separability in class manifolds. 
+\citet{benfenati2025unveilingtransformerperceptionexploring} interpret transformer layer processing as deformations of the input manifold, and through Jacobian-based algorithms
+find equivalence classes within the input manifold.
+\cite{fitz2024hiddenholestopologicalaspects} uses various tools from TDA on point cloud residual manifolds in transformer language models, studying topological change
+through training. \citet{zhang2025multiscalemanifoldalignmentinterpreting} propose alignment between LLM internal representations (across layers) and hierarchial semantic 
+categorization. \citet{modell2025originsrepresentationmanifoldslarge} theoretically justify the existince of feature manifolds in transformers, 
+which are programmatically found by \citet{tiblias2025shapehappensautomaticfeature}. In fact \citet{chen2025preservesculptmanifoldalignedfinetuning} incorporate manifold alignment
+as a constraint in fine-tuning, finding models perform successfully whilst preserving geometric structure.
+
+\textbf{LRH}
+
+Finally, apart from manifolds and topology, there is the work related to mechanistic interpretability. \citet{elhage2022toymodelssuperposition} empirically demonstrate the 
+phenomena of superposition, and \citet{elhage2021mathematical} derive the theory behind transformers computing by moving information between token residual streams. \citet{park2024linearrepresentationhypothesisgeometry}
+formalize these ideas as the "Linear Representation Hypothesis" (LRH). 
+
+
+\section{Plan}
+\label{sec:plan}
+
+Motivated by prior work we seek to investigate the theoretical mathematics behind residual manifolds, and "jumping" as it relates to topology and the linear representation hypothesis. 
+We also wish to empirically study some of this topological structure, seeing how different perturbations affect the topology and complexity of the residual geometries.
+
+
+\subsection{Theory}
+\label{sec:plan:theory}
+
+This work is exploratory in nature, but these are some keen mathematic ideas we seek to investigate. We do not expect to answer all of these, but the breadth of exploration should incite enough interesting work for the course of this project.
+
+\subsubsection{Background \& Definitions}
+Given a language model $L$ with latent dimension $d$ and input tokens $T = \{t_1, t_2, \ldots, t_n\}$ we will denote their latent representations after layer $i$ as $\{ z_1^{(i)}, z_2^{(i)}, \ldots, z_n^{(i)} \} \subseteq \mathbb{R}^d$. For simplicity\footnote{For now we will mainly pertain to latent vectors before the first layer, after embedding. Given sufficient time, we intend to perform layer-wise experiments as well} we will
+focus on $i=0$ and omit the $z^{(0)}$ notation.
+Under the linear representation hypothesis (LRH) we will denote the set of all features learned by the model as $F = \{f_1, f_2, \ldots, f_m \} \subseteq \mathbb{R}^d$. We can re-write our vector sets as matrices
+$Z = [z_1, z_2, \ldots, z_n]^\top \in \mathbb{R}^{n \times d}$ and $F = [f_1, f_2, \ldots, f_m] \in \mathbb{R}^{m \times d}$. Then by using superposition, each latent vector $z_i$ is a sparse linear combination of features in $F$, or formally, 
+$Z = A F$ where $A \in \mathbb{R}^{n \times m}$ is a sparse matrix.
+
+\subsubsection{Residual "Manifolds"}
+We wish to investigate the topological structure of $Z$ as a point cloud. We begin with the following questions:
+\begin{enumerate}
+  \item Under the LRH, how do we justify manifold structure in $Z$? That is, what assumptions are required to prove $\forall z \in Z$, $\exists \epsilon > 0$ such that $N_\epsilon(z)$ is homeomorphic to $\mathbb{R}^k$ for some $k \leq d$? $N_\epsilon(z)$ denotes the open ball of radius $\epsilon$ around $z$.
+  \item Can we relate the sparsity of $A$ to the intrinsic dimension of $Z$? Note that we do not know $A$.
+\end{enumerate}
+
+\subsubsection{Jumping "Manifolds"}
+Under LRH we can formalize this notion of "jumping" as follows. Given a pair of point cloud of latent representations $Z_1, Z_2$ based on token sets $T_1, T_2$ respectively, (where perhaps $T_2$ is a "better" prompt than $T_1$)
+a "jump" would correpond to more features being surfaced in $Z_2$ than $Z_1$. Formally, if we define the feature support of a point clouds as
+$F_1, F_2 \subseteq \mathbb{R}^d$ where $Z_1 \subseteq $ span$(F_1)$ and $Z_2 \subseteq $ span$(F_2)$, and $F_2 \neq F_1$, this should be reflected topologically.
+
+We wish to explore topological measures we can use to detect, and quantify this change, or "jumps". We wish to formally define these and mathematically prove
+why they should measure this phenomena, before experimenting with them. Currently we consider the following:
+\begin{enumerate}
+  \item Using simplicial and/or persistent homology, we can build Vietoris-Rips complexes on $Z$ and measure Betti numbers $\beta_k$ to capture global topological structure. Can we develop a theoretical connection to "jumps"?
+  \item Intuitively we would like to measure change in geometric structure. We would like to develop or use a measure of curvature on $Z$ and relate it to these jumps
+\end{enumerate}
+
+\subsubsection{Residual Topology}
+Prior work has undoubetdly demonstrated semantic correlation in how tokens are embedded (\citet{word2vec} is one), can we relate this to how semantically correlated point clouds may look topologically? 
+Assuming we build a simplicial complex from this cloud, are there any theoretical suggestions to the structures homology class, or persistent homology?
+
+\section{Logistics}
+\subsection{Compute}
+Given the relative small size of BERT it's expected that all experiments can be conducted on the available compute of a Macbook Pro M1 series laptop. 
+There is also GPUs available through the \texttt{sahitya} server which will more than certainly suffice for these experiments. Libraries like \texttt{gudhi} and \texttt{torch} will be used as 
+they have an API for efficient vectorized C++ implementations of persistent and simlicial homology.
+\subsection{Timeline}
+From Nov 3 to Dec 23 we intend to roughly adhere to the following schedule (7 weeks):
+\begin{enumerate}
+  \item Week 1 to 3: Work on the theory behind this subject, hopefully derive concrete theoretical results to test
+  \item Week 2 to 4: Collect data and build dataset, and conduct experiments
+  \item Week 4 to 6: Interpret experiments \& work on mathematic explanations
+  \item Week 7: Finalize results and write final paper
+\end{enumerate}
+
+Please note that the theoretical side of this work is exploratory as we desire for part of the proposed project to be the development of theory
+at the intersection of these subjects. It is not to be interpreted that the project is underspecified.
+
+% Bibliography entries for the entire Anthology, followed by custom entries
+%\bibliography{anthology,custom}
+% Custom bibliography entries only
+
+\bibliography{custom}
+
+\appendix
+
+\section{Example Appendix}
+\label{sec:appendix}
+
+\subsection{Dataset Creation}
+\subsubsection{Source}
+\label{sec:appendix:data}
+We seek to paraphrase (reword) long form text samples where the underlying semantic content remains unchanged. 
+To this end we chose gradeschool level math and science concept explanations, which can be easily sourced from Wikipedia. This is advantageous
+over something like stories or historical events as there are less named entities and proper nouns that may complicate tokenization. Additionally, 
+we are simply interested in topology not necessarily the actual distribution over the type of text samples, so this should suffice.
+
+Using the Wikipedia API \footnote{https://pypi.org/project/Wikipedia-API/} we can scrape lots of text from paragraph explanations concepts mathematics (and possibly other disciplines). As of now we can use the following resources:
+
+\begin{enumerate}
+  \item \url{https://en.wikipedia.org/wiki/List_of_physics_concepts_in_primary_and_secondary_education_curricula}
+  \item \url{https://en.wikipedia.org/wiki/List_of_calculus_topics}
+  \item \url{https://en.wikipedia.org/wiki/Outline_of_geometry}
+  \item \url{https://en.wikipedia.org/wiki/Outline_of_arithmetic}
+\end{enumerate}
+
+We will use the OpenAI API\footnote{https://platform.openai.com/docs/overview} to facilitate paraphrasing, with more details below.
+
+\subsubsection{Prompts}
+\label{sec:appendix:prompts}
+
+Note that "role" below is one of "Academic", "Poet", and "Child". \\
+\textbf{Prompt:}
+\begin{verbatim}
+You are an expert {role} writer. Your task is to 
+reword the following text while preserving the 
+underlying concept explained. Ensure that the 
+reworded text explains the exact same thing,
+with equal level of detail and no new information, 
+but is expressed in a {role} style. Ensure that a 
+similar amount of words are used (don't summarize or 
+elaborate too much).
+\end{verbatim}
+
+We will filter the paraphrases to retain samples within $\pm 5\%$ of the original token count.
+
+\end{document}

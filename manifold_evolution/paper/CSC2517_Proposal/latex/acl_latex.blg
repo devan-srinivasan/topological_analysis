@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: acl_latex.aux
+The style file: acl_natbib.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: custom.bib
+Warning--empty journal in neuralpersistence
+You've used 29 entries,
+            3764 wiz_defined-function locations,
+            916 strings with 17310 characters,
+and the built_in function-call counts, 32098 in all, are:
+= -- 2454
+> -- 2845
+< -- 12
++ -- 1183
+- -- 980
+* -- 2788
+:= -- 5139
+add.period$ -- 119
+call.type$ -- 29
+change.case$ -- 544
+chr.to.int$ -- 32
+cite$ -- 30
+duplicate$ -- 1283
+empty$ -- 1537
+format.name$ -- 1065
+if$ -- 6424
+int.to.chr$ -- 2
+int.to.str$ -- 4
+missing$ -- 311
+newline$ -- 149
+num.names$ -- 118
+pop$ -- 1042
+preamble$ -- 1
+purify$ -- 508
+quote$ -- 0
+skip$ -- 1508
+stack$ -- 0
+substring$ -- 481
+swap$ -- 760
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 261
+warning$ -- 1
+while$ -- 98
+width$ -- 0
+write$ -- 382
+(There was 1 warning)
